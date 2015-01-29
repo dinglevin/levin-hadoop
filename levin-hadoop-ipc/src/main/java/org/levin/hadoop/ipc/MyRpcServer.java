@@ -11,7 +11,6 @@ public class MyRpcServer {
                .setNumHandlers(10)
                .setnumReaders(10)
                .setPort(9001)
-               .setPortRangeConfig("8000-9000")
                .setQueueSizePerHandler(10)
                .setVerbose(true);
         
