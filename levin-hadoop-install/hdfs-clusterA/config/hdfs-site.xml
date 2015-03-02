@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<!--
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License. See accompanying LICENSE file.
+-->
+
+<!-- Put site-specific property overrides in this file. -->
+
+<configuration>
+  <property>
+    <name>dfs.namenode.name.dir</name>
+    <value>${hadoop.local.base.home}/name</value>
+  </property>
+  <property>
+    <name>dfs.namenode.edits.dir</name>
+    <value>${hadoop.local.base.home}/edits</value>
+  </property>
+  
+  <property>
+    <name>dfs.datanode.data.dir</name>
+    <value>${hadoop.local.base.home}/data</value>
+  </property>
+  <property>
+    <name>dfs.datanode.address</name>
+    <value>${local.hostname}:${datanode.address.port}</value>
+  </property>
+  <property>
+    <name>dfs.datanode.http.address</name>
+    <value>${local.hostname}:${datanode.http.port}</value>
+  </property>
+  <property>
+    <name>dfs.datanode.ipc.address</name>
+    <value>${local.hostname}:${datanode.ipc.port}</value>
+  </property>
+
+  <property>
+    <name>dfs.ha.log-roll.period</name>
+    <value>-1</value>
+  </property>
+
+  <property>
+    <name>dfs.nameservices</name>
+    <value>clusterA,clusterB</value>
+  </property>
+  <property>
+    <name>dfs.nameservice.id</name>
+    <value>${local.nameservice.id}</value>
+  </property>
+  <property>
+    <name>dfs.ha.namenode.id</name>
+    <value>${local.namenode.id}</value>
+  </property>
+
+  <property>  
+    <name>dfs.ha.namenodes.clusterA</name>  
+    <value>nn,snn</value>
+  </property>
+  <property>  
+    <name>dfs.namenode.rpc-address.clusterA.nn</name>  
+    <value>${clusterA.hostname}:${namenode.clusterA.nn.rpc.port}</value>
+  </property>
+  <property>
+    <name>dfs.namenode.servicerpc-address.clusterA.nn</name>
+    <value>${clusterA.hostname}:${namenode.clusterA.nn.servicerpc.port}</value>
+  </property>
+  <property>  
+    <name>dfs.namenode.http-address.clusterA.nn</name>
+    <value>${clusterA.hostname}:${namenode.clusterA.nn.http.port}</value>
+  </property>
+  <property> 
+    <name>dfs.namenode.rpc-address.clusterA.snn</name>
+    <value>${clusterA.hostname}:${namenode.clusterA.snn.rpc.port}</value>
+  </property>
+  <property>
+    <name>dfs.namenode.servicerpc-address.clusterA.snn</name>
+    <value>${clusterA.hostname}:${namenode.clusterA.snn.servicerpc.port}</value>
+  </property>
+  <property>
+    <name>dfs.namenode.http-address.clusterA.snn</name>
+    <value>${clusterA.hostname}:${namenode.clusterA.snn.http.port}</value>
+  </property>
+
+<!-- 
+comment first as I don't have clusterB setup
+  <property>
+    <name>dfs.ha.namenodes.clusterB</name>
+    <value>nn,snn</value>
+  </property>
+  <property>
+    <name>dfs.namenode.rpc-address.clusterB.nn</name>
+    <value>${clusterB.hostname}:${namenode.clusterB.nn.rpc.port}</value>
+  </property>
+  <property>
+    <name>dfs.namenode.servicerpc-address.clusterB.nn</name>
+    <value>${clusterB.hostname}:${namenode.clusterB.nn.servicerpc.port}</value>
+  </property>
+  <property>
+    <name>dfs.namenode.http-address.clusterB.nn</name>
+    <value>${clusterB.hostname}:${namenode.clusterB.nn.http.port}</value>
+  </property>
+  <property>
+    <name>dfs.namenode.rpc-address.clusterB.snn</name>
+    <value>${clusterB.hostname}:${namenode.clusterB.snn.rpc.port}</value>
+  </property>
+  <property>
+    <name>dfs.namenode.servicerpc-address.clusterB.snn</name>
+    <value>${clusterB.hostname}:${namenode.clusterB.snn.servicerpc.port}</value>
+  </property>
+  <property>
+    <name>dfs.namenode.http-address.clusterB.snn</name>
+    <value>${clusterB.hostname}:${namenode.clusterB.snn.http.port}</value>
+  </property>
+ -->
+ 
+  <property>
+    <name>dfs.namenode.logging.level</name>
+    <value>debug</value>
+  </property>
+  
+</configuration>
